@@ -30,10 +30,10 @@ class basic_input(object):
         """
         self.yamlpath = input_file
 
-        yaml_dict = read_yaml(input_file)
+        self.yaml_dict = read_yaml(input_file)
 
-        for key in yaml_dict:
-            setattr(self, key, yaml_dict[key])
+        for key in self.yaml_dict:
+            setattr(self, key, self.yaml_dict[key])
 
         # set default values
         for key in self.__class__.defaults:
